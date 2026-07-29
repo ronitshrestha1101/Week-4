@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EmeraldSlider - Custom Vanilla JS Carousel</title>
+  <title>Places to Visit in Nepal - Custom Carousel</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,8 +15,8 @@
 
   <div class="container">
     <header>
-      <h1>Emerald <em>Slider</em></h1>
-      <p>A beautifully crafted, lightweight touch carousel. Built in pure JavaScript with a dark, organic emerald aesthetic and seamless infinite looping.</p>
+      <h1>Places to Visit in <em>Nepal</em></h1>
+      <p>A photographic journey through Nepal's most breathtaking landmarks, from the snow-capped Himalayan peaks to historic durbar squares and peaceful lakes.</p>
     </header>
 
     <main class="showcase-grid">
@@ -26,34 +26,34 @@
           <div class="slider-track">
             
             <div class="slider-slide">
-              <img src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1200&h=675&q=80" alt="Sunlight filtering through dark green redwood forest canopy">
+              <img src="images/Mt.jpg" alt="Majestic snow-capped peak of Mount Ama Dablam in Nepal">
               <div class="slider-overlay">
-                <h2 class="slider-caption-title">Deep Forest Canopy</h2>
-                <p class="slider-caption-desc">Sunlight filtering through the dense redwood canopy of Northern California.</p>
+                <h2 class="slider-caption-title">Mount Ama Dablam</h2>
+                <p class="slider-caption-desc">Soaring at 6,812 meters, this iconic peak in the Everest region is famed for its steep ridges and beautiful shape.</p>
               </div>
             </div>
 
             <div class="slider-slide">
-              <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&h=675&q=80" alt="Serene emerald alpine lake surrounded by pine forests">
+              <img src="images/images.jpg" alt="Colorful wooden boats on Phewa Lake in Pokhara, Nepal">
               <div class="slider-overlay">
-                <h2 class="slider-caption-title">Emerald Lake Valley</h2>
-                <p class="slider-caption-desc">An alpine lake reflecting emerald-green pines under clear skies.</p>
+                <h2 class="slider-caption-title">Phewa Lake, Pokhara</h2>
+                <p class="slider-caption-desc">A tranquil freshwater lake reflecting the lush hills and the Annapurna range, famous for its colorful wooden boats.</p>
               </div>
             </div>
 
             <div class="slider-slide">
-              <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&h=675&q=80" alt="Moody mist drifting through dark green pine trail">
+              <img src="images/bhaktapur-durbar-square.webp" alt="Ancient brick temples and architecture at Bhaktapur Durbar Square, Nepal">
               <div class="slider-overlay">
-                <h2 class="slider-caption-title">Misty Pine Trails</h2>
-                <p class="slider-caption-desc">Fog drifting silently through a quiet, dark green pine forest trail.</p>
+                <h2 class="slider-caption-title">Bhaktapur Durbar Square</h2>
+                <p class="slider-caption-desc">A UNESCO World Heritage Site filled with ancient Newari art, towering pagodas, and exquisite wood and metal carvings.</p>
               </div>
             </div>
 
             <div class="slider-slide">
-              <img src="https://images.unsplash.com/photo-1545167622-3a6ac756afa4?auto=format&fit=crop&w=1200&h=675&q=80" alt="Macro detail of fresh green tropical Monstera foliage with water drops">
+              <img src="images/images (1).jpg" alt="Entrance gate to Bardia National Park in Nepal">
               <div class="slider-overlay">
-                <h2 class="slider-caption-title">Macro Monstera Foliage</h2>
-                <p class="slider-caption-desc">Detail of water droplets collecting on tropical monstera leaves.</p>
+                <h2 class="slider-caption-title">Bardia National Park</h2>
+                <p class="slider-caption-desc">A massive protected wilderness in Nepal's plains, home to Royal Bengal tigers, one-horned rhinos, and wild elephants.</p>
               </div>
             </div>
 
@@ -61,82 +61,22 @@
         </div>
       </section>
 
-      <section class="glass-card settings-panel" aria-label="Slider Configurator">
-        <h2>Customise</h2>
-        
-        <div class="setting-group">
-          <label for="toggle-autoplay">
-            Autoplay slides
-            <span class="switch">
-              <input type="checkbox" id="toggle-autoplay" checked>
-              <span class="slider-toggle"></span>
-            </span>
-          </label>
-        </div>
-
-        <div class="setting-group" id="interval-group">
-          <label for="range-interval">
-            Autoplay interval
-            <span class="range-val" id="val-interval">3000ms</span>
-          </label>
-          <input type="range" id="range-interval" class="range-input" min="1000" max="8000" step="500" value="3000">
-        </div>
-
-        <div class="setting-group">
-          <label for="range-speed">
-            Transition duration
-            <span class="range-val" id="val-speed">600ms</span>
-          </label>
-          <input type="range" id="range-speed" class="range-input" min="200" max="2000" step="50" value="600">
-        </div>
-
-        <div class="setting-group">
-          <label for="toggle-arrows">
-            Show navigation arrows
-            <span class="switch">
-              <input type="checkbox" id="toggle-arrows" checked>
-              <span class="slider-toggle"></span>
-            </span>
-          </label>
-        </div>
-
-        <div class="setting-group">
-          <label for="toggle-dots">
-            Show progress dots
-            <span class="switch">
-              <input type="checkbox" id="toggle-dots" checked>
-              <span class="slider-toggle"></span>
-            </span>
-          </label>
-        </div>
-      </section>
-
-      <section class="glass-card code-section" aria-label="Code Reference">
-        <div class="code-header">
-          <h2 class="code-title">Setup Code</h2>
-          <span class="code-lang">JavaScript</span>
-        </div>
-        <pre class="code-box" id="code-box"><code>const slider = new ImageSlider('#emerald-slider', {
-  autoplay: true,
-  autoplayInterval: 3000,
-  transitionSpeed: 600,
-  showArrows: true,
-  showDots: true
-});</code></pre>
-      </section>
-
-      <section class="features-section" aria-label="Technical Features">
+      <section class="features-section" aria-label="Nepal Landmarks">
         <div class="glass-card feature-card">
-          <h3>Infinite loop</h3>
-          <p>Wrapped in a continuous, natural cycle. Slides flow infinitely in either direction without awkward jumps or resets.</p>
+          <h3>Mount Ama Dablam</h3>
+          <p>A majestic peak in eastern Nepal, soaring alongside Everest. Revered as one of the world's most beautiful mountains for its sheer icy ridges.</p>
         </div>
         <div class="glass-card feature-card">
-          <h3>Frictionless swipe</h3>
-          <p>Designed to feel responsive. Works seamlessly with both touch swipes and mouse drags using fluid movement tracking.</p>
+          <h3>Phewa Lake</h3>
+          <p>The heart of Pokhara. A peaceful freshwater lake where colorful wooden boats float beneath the reflection of the sacred Machapuchare peak.</p>
         </div>
         <div class="glass-card feature-card">
-          <h3>GPU accelerated</h3>
-          <p>Silky smooth transitions, powered by hardware-accelerated CSS transformations that keep interaction light on your system.</p>
+          <h3>Bhaktapur Durbar</h3>
+          <p>An ancient museum of art and history. Explore medieval red-brick temples, pagoda towers, and the famous wood-carved Peacock Window.</p>
+        </div>
+        <div class="glass-card feature-card">
+          <h3>Bardia National Park</h3>
+          <p>An untouched sanctuary in Nepal's western plains, hosting deep Sal forests and grasslands where the Royal Bengal tiger roams free.</p>
         </div>
       </section>
 
@@ -147,77 +87,13 @@
   
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const toggleAutoplay = document.getElementById('toggle-autoplay');
-      const rangeInterval = document.getElementById('range-interval');
-      const valInterval = document.getElementById('val-interval');
-      const rangeSpeed = document.getElementById('range-speed');
-      const valSpeed = document.getElementById('val-speed');
-      const toggleArrows = document.getElementById('toggle-arrows');
-      const toggleDots = document.getElementById('toggle-dots');
-      const intervalGroup = document.getElementById('interval-group');
-      const codeBox = document.getElementById('code-box');
-
-      let slider = null;
-
-      function updateVisualizer(opts) {
-        codeBox.innerHTML = `
-<span class="keyword">const</span> slider = <span class="keyword">new</span> <span class="def">ImageSlider</span>(<span class="string">'#emerald-slider'</span>, {
-  <span class="keyword">autoplay</span>: <span class="number">${opts.autoplay}</span>,
-  <span class="keyword">autoplayInterval</span>: <span class="number">${opts.autoplayInterval}</span>, <span class="comment">// ms</span>
-  <span class="keyword">transitionSpeed</span>: <span class="number">${opts.transitionSpeed}</span>, <span class="comment">// ms</span>
-  <span class="keyword">showArrows</span>: <span class="number">${opts.showArrows}</span>,
-  <span class="keyword">showDots</span>: <span class="number">${opts.showDots}</span>
-});`.trim();
-      }
-
-      function rebuildSlider() {
-        const autoplayVal = toggleAutoplay.checked;
-        const intervalVal = parseInt(rangeInterval.value, 10);
-        const speedVal = parseInt(rangeSpeed.value, 10);
-        const arrowsVal = toggleArrows.checked;
-        const dotsVal = toggleDots.checked;
-
-        if (autoplayVal) {
-          intervalGroup.style.opacity = '1';
-          intervalGroup.style.pointerEvents = 'auto';
-        } else {
-          intervalGroup.style.opacity = '0.5';
-          intervalGroup.style.pointerEvents = 'none';
-        }
-
-        if (slider) {
-          slider.destroy();
-        }
-
-        const options = {
-          autoplay: autoplayVal,
-          autoplayInterval: intervalVal,
-          transitionSpeed: speedVal,
-          showArrows: arrowsVal,
-          showDots: dotsVal
-        };
-
-        slider = new ImageSlider('#emerald-slider', options);
-
-        updateVisualizer(options);
-      }
-
-      toggleAutoplay.addEventListener('change', rebuildSlider);
-      
-      rangeInterval.addEventListener('input', () => {
-        valInterval.textContent = `${rangeInterval.value}ms`;
-        rebuildSlider();
+      new ImageSlider('#emerald-slider', {
+        autoplay: true,
+        autoplayInterval: 3000,
+        transitionSpeed: 600,
+        showArrows: true,
+        showDots: true
       });
-
-      rangeSpeed.addEventListener('input', () => {
-        valSpeed.textContent = `${rangeSpeed.value}ms`;
-        rebuildSlider();
-      });
-
-      toggleArrows.addEventListener('change', rebuildSlider);
-      toggleDots.addEventListener('change', rebuildSlider);
-
-      rebuildSlider();
     });
   </script>
 </body>

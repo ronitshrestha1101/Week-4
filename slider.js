@@ -31,16 +31,20 @@ class ImageSlider {
     this.startX = 0;
     this.hasClones = false;
     
+    this.userInteracted = false;
+    
     this.handleTransitionEnd = this.onTransitionEnd.bind(this);
-    this.handlePrevClick = this.prev.bind(this);
-    this.handleNextClick = this.next.bind(this);
+    this.handlePrevClick = () => { this.userInteracted = true; this.stopAutoplay(); this.prev(); };
+    this.handleNextClick = () => { this.userInteracted = true; this.stopAutoplay(); this.next(); };
     this.handlePointerDown = this.onPointerDown.bind(this);
     this.handlePointerMove = this.onPointerMove.bind(this);
     this.handlePointerUp = this.onPointerUp.bind(this);
     this.handleMouseEnter = this.onMouseEnter.bind(this);
     this.handleMouseLeave = this.onMouseLeave.bind(this);
     this.handleResize = this.onResize.bind(this);
+    this.handleKeyDown = this.onKeyDown.bind(this);
 
+    this.container.setAttribute('tabindex', '0');
     this.init();
   }
 
@@ -144,6 +148,8 @@ class ImageSlider {
       const targetDot = e.target.closest('.slider-dot');
       if (!targetDot || this.isTransitioning) return;
       
+      this.userInteracted = true;
+      this.stopAutoplay();
       const targetIndex = parseInt(targetDot.getAttribute('data-index'), 10);
       this.goTo(targetIndex);
     });
@@ -171,6 +177,7 @@ class ImageSlider {
 
     this.container.addEventListener('mouseenter', this.handleMouseEnter);
     this.container.addEventListener('mouseleave', this.handleMouseLeave);
+    this.container.addEventListener('keydown', this.handleKeyDown);
 
     window.addEventListener('resize', this.handleResize);
   }
@@ -186,7 +193,7 @@ class ImageSlider {
     this.updateTrackPosition();
     this.updateDots();
 
-    if (this.options.autoplay) {
+    if (this.options.autoplay && !this.userInteracted) {
       this.startAutoplay();
     }
   }
@@ -202,7 +209,7 @@ class ImageSlider {
     this.updateTrackPosition();
     this.updateDots();
 
-    if (this.options.autoplay) {
+    if (this.options.autoplay && !this.userInteracted) {
       this.startAutoplay();
     }
   }
@@ -218,7 +225,7 @@ class ImageSlider {
     this.updateTrackPosition();
     this.updateDots();
 
-    if (this.options.autoplay) {
+    if (this.options.autoplay && !this.userInteracted) {
       this.startAutoplay();
     }
   }
@@ -244,7 +251,10 @@ class ImageSlider {
   onPointerDown(e) {
     if (e.button !== 0 && e.pointerType === 'mouse') return;
     if (this.isTransitioning) return;
+    
+    if (e.target.closest('.slider-arrow') || e.target.closest('.slider-dots')) return;
 
+    this.userInteracted = true;
     this.isDragging = true;
     this.startX = e.clientX;
     this.container.classList.add('dragging');
@@ -292,7 +302,7 @@ class ImageSlider {
       this.updateTrackPosition();
     }
 
-    if (this.options.autoplay) {
+    if (this.options.autoplay && !this.userInteracted) {
       this.startAutoplay();
     }
   }
@@ -330,6 +340,20 @@ class ImageSlider {
     this.setTrackTransition(true);
   }
 
+  onKeyDown(e) {
+    if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      this.userInteracted = true;
+      this.stopAutoplay();
+      this.prev();
+    } else if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      this.userInteracted = true;
+      this.stopAutoplay();
+      this.next();
+    }
+  }
+
   destroy() {
     this.stopAutoplay();
 
@@ -340,6 +364,7 @@ class ImageSlider {
     this.container.removeEventListener('pointercancel', this.handlePointerUp);
     this.container.removeEventListener('mouseenter', this.handleMouseEnter);
     this.container.removeEventListener('mouseleave', this.handleMouseLeave);
+    this.container.removeEventListener('keydown', this.handleKeyDown);
     window.removeEventListener('resize', this.handleResize);
 
     if (this.prevBtn) {
