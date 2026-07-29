@@ -7,7 +7,7 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="style.css">
 </head>
@@ -15,8 +15,8 @@
 
   <div class="container">
     <header>
-      <h1>EmeraldSlider</h1>
-      <p>A modular, hardware-accelerated vanilla JavaScript image slider featuring seamless boundary looping, fluid touch swipe, and premium dark emerald aesthetics.</p>
+      <h1>Emerald <em>Slider</em></h1>
+      <p>A beautifully crafted, lightweight touch carousel. Built in pure JavaScript with a dark, organic emerald aesthetic and seamless infinite looping.</p>
     </header>
 
     <main class="showcase-grid">
@@ -62,11 +62,11 @@
       </section>
 
       <section class="glass-card settings-panel" aria-label="Slider Configurator">
-        <h2>Configuration</h2>
+        <h2>Customise</h2>
         
         <div class="setting-group">
           <label for="toggle-autoplay">
-            Autoplay Slides
+            Autoplay slides
             <span class="switch">
               <input type="checkbox" id="toggle-autoplay" checked>
               <span class="slider-toggle"></span>
@@ -76,7 +76,7 @@
 
         <div class="setting-group" id="interval-group">
           <label for="range-interval">
-            Autoplay Interval
+            Autoplay interval
             <span class="range-val" id="val-interval">3000ms</span>
           </label>
           <input type="range" id="range-interval" class="range-input" min="1000" max="8000" step="500" value="3000">
@@ -84,7 +84,7 @@
 
         <div class="setting-group">
           <label for="range-speed">
-            Transition Duration
+            Transition duration
             <span class="range-val" id="val-speed">600ms</span>
           </label>
           <input type="range" id="range-speed" class="range-input" min="200" max="2000" step="50" value="600">
@@ -92,7 +92,7 @@
 
         <div class="setting-group">
           <label for="toggle-arrows">
-            Navigation Arrows
+            Show navigation arrows
             <span class="switch">
               <input type="checkbox" id="toggle-arrows" checked>
               <span class="slider-toggle"></span>
@@ -102,7 +102,7 @@
 
         <div class="setting-group">
           <label for="toggle-dots">
-            Indicator Dots
+            Show progress dots
             <span class="switch">
               <input type="checkbox" id="toggle-dots" checked>
               <span class="slider-toggle"></span>
@@ -113,7 +113,7 @@
 
       <section class="glass-card code-section" aria-label="Code Reference">
         <div class="code-header">
-          <h2 class="code-title">Instantiation Code</h2>
+          <h2 class="code-title">Setup Code</h2>
           <span class="code-lang">JavaScript</span>
         </div>
         <pre class="code-box" id="code-box"><code>const slider = new ImageSlider('#emerald-slider', {
@@ -127,16 +127,16 @@
 
       <section class="features-section" aria-label="Technical Features">
         <div class="glass-card feature-card">
-          <h3>Continuous Boundary Loop</h3>
-          <p>Utilizes dynamic start/end DOM slide duplication to perform seamless wrapping animations in the same translation direction.</p>
+          <h3>Infinite loop</h3>
+          <p>Wrapped in a continuous, natural cycle. Slides flow infinitely in either direction without awkward jumps or resets.</p>
         </div>
         <div class="glass-card feature-card">
-          <h3>Fluid Touch gestures</h3>
-          <p>Unifies mobile touch points and desktop mouse drags using standard pointer tracking calculations for frictionless sliding responsiveness.</p>
+          <h3>Frictionless swipe</h3>
+          <p>Designed to feel responsive. Works seamlessly with both touch swipes and mouse drags using fluid movement tracking.</p>
         </div>
         <div class="glass-card feature-card">
-          <h3>Hardware Accelerated</h3>
-          <p>Uses CSS transform: translateX() rendering offloaded to device GPU pipelines for continuous 60fps frame rate executions.</p>
+          <h3>GPU accelerated</h3>
+          <p>Silky smooth transitions, powered by hardware-accelerated CSS transformations that keep interaction light on your system.</p>
         </div>
       </section>
 
